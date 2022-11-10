@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:convert' hide Codec;
 import 'dart:math';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:convenient_test_common/convenient_test_common.dart';
@@ -208,10 +206,16 @@ Future<MyComparisonResult> _compareListsWithExtraOutput(List<int>? test, List<in
 
   final Codec testImageCodec = await instantiateImageCodec(Uint8List.fromList(test));
   final Image testImage = (await testImageCodec.getNextFrame()).image;
-  final ByteData? testImageRgba = await testImage.toByteData();
 
   final Codec masterImageCodec = await instantiateImageCodec(Uint8List.fromList(master));
   final Image masterImage = (await masterImageCodec.getNextFrame()).image;
+
+  return await compareUiImages(testImage, masterImage);
+}
+
+// NOTE extracted from [_compareLists]
+Future<MyComparisonResult> compareUiImages(Image testImage, Image masterImage) async {
+  final ByteData? testImageRgba = await testImage.toByteData();
   final ByteData? masterImageRgba = await masterImage.toByteData();
 
   final int width = testImage.width;
@@ -256,7 +260,7 @@ Future<MyComparisonResult> _compareListsWithExtraOutput(List<int>? test, List<in
         // We grab the max of the 0xAABBGGRR encoded bytes, and then convert
         // back to 0xRRGGBBAA for the actual pixel value, since this is how it
         // was historically done.
-        final int maskPixel = _toRGBA(math.max(
+        final int maskPixel = _toRGBA(max(
           _toABGR(invertedMasterPixel),
           _toABGR(invertedTestPixel),
         ));
@@ -471,7 +475,7 @@ class GoldenTolerationEntry {
   Map<String, dynamic> toJson() => _$GoldenTolerationEntryToJson(this);
 }
 
-extension on GoldenConfig {
+extension ExtGoldenConfig on GoldenConfig {
   static const _kTag = 'GoldenConfig';
 
   bool check(MyComparisonResult result) {

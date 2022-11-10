@@ -216,6 +216,37 @@ For all options that are configurable and all environment variable names, please
 
 If you are trying to use this package with Android Virtual Emulator (AVD), you may need to set `kConvenientTestManagerHost` to `10.0.2.2` because of its [network topology](https://stackoverflow.com/questions/9808560/why-do-we-use-10-0-2-2-to-connect-to-local-web-server-instead-of-using-computer). Please see issue #253 for more details.
 
----
+## Contributors
+
+For detailed PRs (excluding myself), please see [this link](https://github.com/fzyzcjy/flutter_convenient_test/pulls?q=is%3Apr+-author%3Afzyzcjy+).
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/Rohithgilla12"><img src="https://avatars.githubusercontent.com/u/19389850?v=4?s=100" width="100px;" alt="Rohith Gilla"/><br /><sub><b>Rohith Gilla</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=Rohithgilla12" title="Code">💻</a></td>
+      <td align="center"><a href="http://mehrankordi.com"><img src="https://avatars.githubusercontent.com/u/1547111?v=4?s=100" width="100px;" alt="Mehran Kordi"/><br /><sub><b>Mehran Kordi</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=MCord" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/ethancadoo"><img src="https://avatars.githubusercontent.com/u/100008135?v=4?s=100" width="100px;" alt="ethancadoo"/><br /><sub><b>ethancadoo</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=ethancadoo" title="Code">💻</a> <a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=ethancadoo" title="Documentation">📖</a></td>
+      <td align="center"><a href="http://vhanda.in"><img src="https://avatars.githubusercontent.com/u/426467?v=4?s=100" width="100px;" alt="Vishesh Handa"/><br /><sub><b>Vishesh Handa</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=vHanda" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/ostk0069"><img src="https://avatars.githubusercontent.com/u/27538852?v=4?s=100" width="100px;" alt="Takuma Osada"/><br /><sub><b>Takuma Osada</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=ostk0069" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/ronba"><img src="https://avatars.githubusercontent.com/u/10216856?v=4?s=100" width="100px;" alt="ronba"/><br /><sub><b>ronba</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=ronba" title="Code">💻</a></td>
+      <td align="center"><a href="http://pacia.tech"><img src="https://avatars.githubusercontent.com/u/40357511?v=4?s=100" width="100px;" alt="Bartek Pacia"/><br /><sub><b>Bartek Pacia</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=bartekpacia" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://blog.alexv525.com"><img src="https://avatars.githubusercontent.com/u/15884415?v=4?s=100" width="100px;" alt="Alex Li"/><br /><sub><b>Alex Li</b></sub></a><br /><a href="https://github.com/fzyzcjy/flutter_convenient_test/commits?author=AlexV525" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 Thanks for testing frameworks in JavaScript, especially `Cypress`, for giving inspirations!
