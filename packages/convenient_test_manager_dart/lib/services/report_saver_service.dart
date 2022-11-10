@@ -23,7 +23,7 @@ abstract class _ReportSaverService with Store {
     // need to be sync, otherwise when two reports come together they may conflict
 
     final String folderPath = await _getReportDirectory();
-    final String reportPath = '${folderPath}report.$kReportFileExtension';
+    final String reportPath = '${folderPath}Report.$kReportFileExtension';
 
     File(reportPath)
         .writeAsBytesSync(request.writeToBuffer(), mode: FileMode.append);
@@ -44,7 +44,7 @@ abstract class _ReportSaverService with Store {
   Future<void> clear() async {
     Log.d(_kTag, 'clear');
     final folder = Directory(await _getReportDirectory());
-    if (folder.existsSync()) folder.deleteSync();
+    if (folder.existsSync()) folder.deleteSync(recursive: true);
   }
 
   static Future<String> _getReportDirectory() async {

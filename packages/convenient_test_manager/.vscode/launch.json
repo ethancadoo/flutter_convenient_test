@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "convenient_test_manager",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=CONVENIENT_TEST_ISOLATION_MODE=true",
+                "--dart-define=CONVENIENT_TEST_EXPORT_SCREENSHOTS=true"
+            ]
+        },
+    ]
+}
