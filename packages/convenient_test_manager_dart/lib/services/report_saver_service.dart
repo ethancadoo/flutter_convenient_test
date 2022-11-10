@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:convenient_test_common_dart/convenient_test_common_dart.dart';
 import 'package:convenient_test_manager_dart/services/fs_service.dart';
@@ -14,26 +15,41 @@ abstract class _ReportSaverService with Store {
   static const _kTag = 'ReportSaverService';
 
   bool get enable => GlobalConfigStore.config.enableReportSaver;
-
   set enable(bool val) => GlobalConfigStore.config.enableReportSaver = val;
 
   Future<void> save(ReportCollection request) async {
     if (!enable) return;
 
     // need to be sync, otherwise when two reports come together they may conflict
-    File(await _getReportPath()).writeAsBytesSync(request.writeToBuffer(), mode: FileMode.append);
+
+    final String folderPath = await _getReportDirectory();
+    final String reportPath = '${folderPath}report.$kReportFileExtension';
+
+    File(reportPath)
+        .writeAsBytesSync(request.writeToBuffer(), mode: FileMode.append);
+
+    if (GlobalConfigStore.config.exportScreenshots) {
+      final dir = Directory('${folderPath}screenshots');
+      dir.createSync();
+
+      for (final item in request.items) {
+        if (item.whichSubType() == ReportItem_SubType.snapshot) {
+          File('${dir.path}${item.snapshot.logEntryId}.png')
+              .writeAsBytesSync(item.snapshot.image as Uint8List);
+        }
+      }
+    }
   }
 
   Future<void> clear() async {
     Log.d(_kTag, 'clear');
-    final path = File(await _getReportPath());
-    if (path.existsSync()) path.deleteSync();
+    final folder = Directory(await _getReportDirectory());
+    if (folder.existsSync()) folder.deleteSync();
   }
 
-  static Future<String> _getReportPath() async {
-    return
-        // ignore: prefer_interpolation_to_compose_strings
-        await GetIt.I.get<FsService>().getActiveSuperRunDataSubDirectory(category: 'Report') +
-            'report.$kReportFileExtension';
+  static Future<String> _getReportDirectory() async {
+    return await GetIt.I
+        .get<FsService>()
+        .getActiveSuperRunDataSubDirectory(category: 'Report');
   }
 }
