@@ -23,86 +23,115 @@ mixin _$GlobalConfigNullable {
   bool? get isolationMode => throw _privateConstructorUsedError;
   bool? get enableReportSaver => throw _privateConstructorUsedError;
   String? get goldenDiffGitRepo => throw _privateConstructorUsedError;
+  bool? get exportScreenshots => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GlobalConfigNullableCopyWith<GlobalConfigNullable> get copyWith => throw _privateConstructorUsedError;
+  $GlobalConfigNullableCopyWith<GlobalConfigNullable> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GlobalConfigNullableCopyWith<$Res> {
-  factory $GlobalConfigNullableCopyWith(GlobalConfigNullable value, $Res Function(GlobalConfigNullable) then) =
-      _$GlobalConfigNullableCopyWithImpl<$Res>;
-  $Res call({bool? isolationMode, bool? enableReportSaver, String? goldenDiffGitRepo});
+  factory $GlobalConfigNullableCopyWith(GlobalConfigNullable value,
+          $Res Function(GlobalConfigNullable) then) =
+      _$GlobalConfigNullableCopyWithImpl<$Res, GlobalConfigNullable>;
+  @useResult
+  $Res call(
+      {bool? isolationMode,
+      bool? enableReportSaver,
+      String? goldenDiffGitRepo,
+      bool? exportScreenshots});
 }
 
 /// @nodoc
-class _$GlobalConfigNullableCopyWithImpl<$Res> implements $GlobalConfigNullableCopyWith<$Res> {
+class _$GlobalConfigNullableCopyWithImpl<$Res,
+        $Val extends GlobalConfigNullable>
+    implements $GlobalConfigNullableCopyWith<$Res> {
   _$GlobalConfigNullableCopyWithImpl(this._value, this._then);
 
-  final GlobalConfigNullable _value;
   // ignore: unused_field
-  final $Res Function(GlobalConfigNullable) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? isolationMode = freezed,
     Object? enableReportSaver = freezed,
     Object? goldenDiffGitRepo = freezed,
+    Object? exportScreenshots = freezed,
   }) {
     return _then(_value.copyWith(
-      isolationMode: isolationMode == freezed
+      isolationMode: freezed == isolationMode
           ? _value.isolationMode
           : isolationMode // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableReportSaver: enableReportSaver == freezed
+      enableReportSaver: freezed == enableReportSaver
           ? _value.enableReportSaver
           : enableReportSaver // ignore: cast_nullable_to_non_nullable
               as bool?,
-      goldenDiffGitRepo: goldenDiffGitRepo == freezed
+      goldenDiffGitRepo: freezed == goldenDiffGitRepo
           ? _value.goldenDiffGitRepo
           : goldenDiffGitRepo // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+      exportScreenshots: freezed == exportScreenshots
+          ? _value.exportScreenshots
+          : exportScreenshots // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_GlobalConfigNullableCopyWith<$Res> implements $GlobalConfigNullableCopyWith<$Res> {
-  factory _$$_GlobalConfigNullableCopyWith(_$_GlobalConfigNullable value, $Res Function(_$_GlobalConfigNullable) then) =
+abstract class _$$_GlobalConfigNullableCopyWith<$Res>
+    implements $GlobalConfigNullableCopyWith<$Res> {
+  factory _$$_GlobalConfigNullableCopyWith(_$_GlobalConfigNullable value,
+          $Res Function(_$_GlobalConfigNullable) then) =
       __$$_GlobalConfigNullableCopyWithImpl<$Res>;
   @override
-  $Res call({bool? isolationMode, bool? enableReportSaver, String? goldenDiffGitRepo});
+  @useResult
+  $Res call(
+      {bool? isolationMode,
+      bool? enableReportSaver,
+      String? goldenDiffGitRepo,
+      bool? exportScreenshots});
 }
 
 /// @nodoc
-class __$$_GlobalConfigNullableCopyWithImpl<$Res> extends _$GlobalConfigNullableCopyWithImpl<$Res>
+class __$$_GlobalConfigNullableCopyWithImpl<$Res>
+    extends _$GlobalConfigNullableCopyWithImpl<$Res, _$_GlobalConfigNullable>
     implements _$$_GlobalConfigNullableCopyWith<$Res> {
-  __$$_GlobalConfigNullableCopyWithImpl(_$_GlobalConfigNullable _value, $Res Function(_$_GlobalConfigNullable) _then)
-      : super(_value, (v) => _then(v as _$_GlobalConfigNullable));
+  __$$_GlobalConfigNullableCopyWithImpl(_$_GlobalConfigNullable _value,
+      $Res Function(_$_GlobalConfigNullable) _then)
+      : super(_value, _then);
 
-  @override
-  _$_GlobalConfigNullable get _value => super._value as _$_GlobalConfigNullable;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? isolationMode = freezed,
     Object? enableReportSaver = freezed,
     Object? goldenDiffGitRepo = freezed,
+    Object? exportScreenshots = freezed,
   }) {
     return _then(_$_GlobalConfigNullable(
-      isolationMode: isolationMode == freezed
+      isolationMode: freezed == isolationMode
           ? _value.isolationMode
           : isolationMode // ignore: cast_nullable_to_non_nullable
               as bool?,
-      enableReportSaver: enableReportSaver == freezed
+      enableReportSaver: freezed == enableReportSaver
           ? _value.enableReportSaver
           : enableReportSaver // ignore: cast_nullable_to_non_nullable
               as bool?,
-      goldenDiffGitRepo: goldenDiffGitRepo == freezed
+      goldenDiffGitRepo: freezed == goldenDiffGitRepo
           ? _value.goldenDiffGitRepo
           : goldenDiffGitRepo // ignore: cast_nullable_to_non_nullable
               as String?,
+      exportScreenshots: freezed == exportScreenshots
+          ? _value.exportScreenshots
+          : exportScreenshots // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -110,9 +139,14 @@ class __$$_GlobalConfigNullableCopyWithImpl<$Res> extends _$GlobalConfigNullable
 /// @nodoc
 @JsonSerializable()
 class _$_GlobalConfigNullable implements _GlobalConfigNullable {
-  _$_GlobalConfigNullable({this.isolationMode, this.enableReportSaver, this.goldenDiffGitRepo});
+  _$_GlobalConfigNullable(
+      {this.isolationMode,
+      this.enableReportSaver,
+      this.goldenDiffGitRepo,
+      this.exportScreenshots});
 
-  factory _$_GlobalConfigNullable.fromJson(Map<String, dynamic> json) => _$$_GlobalConfigNullableFromJson(json);
+  factory _$_GlobalConfigNullable.fromJson(Map<String, dynamic> json) =>
+      _$$_GlobalConfigNullableFromJson(json);
 
   @override
   final bool? isolationMode;
@@ -120,10 +154,12 @@ class _$_GlobalConfigNullable implements _GlobalConfigNullable {
   final bool? enableReportSaver;
   @override
   final String? goldenDiffGitRepo;
+  @override
+  final bool? exportScreenshots;
 
   @override
   String toString() {
-    return 'GlobalConfigNullable(isolationMode: $isolationMode, enableReportSaver: $enableReportSaver, goldenDiffGitRepo: $goldenDiffGitRepo)';
+    return 'GlobalConfigNullable(isolationMode: $isolationMode, enableReportSaver: $enableReportSaver, goldenDiffGitRepo: $goldenDiffGitRepo, exportScreenshots: $exportScreenshots)';
   }
 
   @override
@@ -131,24 +167,33 @@ class _$_GlobalConfigNullable implements _GlobalConfigNullable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GlobalConfigNullable &&
-            const DeepCollectionEquality().equals(other.isolationMode, isolationMode) &&
-            const DeepCollectionEquality().equals(other.enableReportSaver, enableReportSaver) &&
-            const DeepCollectionEquality().equals(other.goldenDiffGitRepo, goldenDiffGitRepo));
+            (identical(other.isolationMode, isolationMode) ||
+                other.isolationMode == isolationMode) &&
+            (identical(other.enableReportSaver, enableReportSaver) ||
+                other.enableReportSaver == enableReportSaver) &&
+            (identical(other.goldenDiffGitRepo, goldenDiffGitRepo) ||
+                other.goldenDiffGitRepo == goldenDiffGitRepo) &&
+            (identical(other.exportScreenshots, exportScreenshots) ||
+                other.exportScreenshots == exportScreenshots));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(isolationMode),
-      const DeepCollectionEquality().hash(enableReportSaver), const DeepCollectionEquality().hash(goldenDiffGitRepo));
+  int get hashCode => Object.hash(runtimeType, isolationMode, enableReportSaver,
+      goldenDiffGitRepo, exportScreenshots);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GlobalConfigNullableCopyWith<_$_GlobalConfigNullable> get copyWith =>
-      __$$_GlobalConfigNullableCopyWithImpl<_$_GlobalConfigNullable>(this, _$identity);
+      __$$_GlobalConfigNullableCopyWithImpl<_$_GlobalConfigNullable>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GlobalConfigNullableToJson(this);
+    return _$$_GlobalConfigNullableToJson(
+      this,
+    );
   }
 }
 
@@ -156,17 +201,22 @@ abstract class _GlobalConfigNullable implements GlobalConfigNullable {
   factory _GlobalConfigNullable(
       {final bool? isolationMode,
       final bool? enableReportSaver,
-      final String? goldenDiffGitRepo}) = _$_GlobalConfigNullable;
+      final String? goldenDiffGitRepo,
+      final bool? exportScreenshots}) = _$_GlobalConfigNullable;
 
-  factory _GlobalConfigNullable.fromJson(Map<String, dynamic> json) = _$_GlobalConfigNullable.fromJson;
+  factory _GlobalConfigNullable.fromJson(Map<String, dynamic> json) =
+      _$_GlobalConfigNullable.fromJson;
 
   @override
-  bool? get isolationMode => throw _privateConstructorUsedError;
+  bool? get isolationMode;
   @override
-  bool? get enableReportSaver => throw _privateConstructorUsedError;
+  bool? get enableReportSaver;
   @override
-  String? get goldenDiffGitRepo => throw _privateConstructorUsedError;
+  String? get goldenDiffGitRepo;
+  @override
+  bool? get exportScreenshots;
   @override
   @JsonKey(ignore: true)
-  _$$_GlobalConfigNullableCopyWith<_$_GlobalConfigNullable> get copyWith => throw _privateConstructorUsedError;
+  _$$_GlobalConfigNullableCopyWith<_$_GlobalConfigNullable> get copyWith =>
+      throw _privateConstructorUsedError;
 }
