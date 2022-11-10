@@ -29,7 +29,7 @@ abstract class _ReportSaverService with Store {
         .writeAsBytesSync(request.writeToBuffer(), mode: FileMode.append);
 
     if (GlobalConfigStore.config.exportScreenshots) {
-      final dir = Directory('${folderPath}screenshots');
+      final dir = Directory('${folderPath}screenshots/');
       dir.createSync();
 
       for (final item in request.items) {
